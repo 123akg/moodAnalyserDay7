@@ -6,16 +6,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MoodAnalyserTest {
-	private MoodAnalyser moodObject;
+private MoodAnalyser moodObject;
 	
 	@Before
 	public void initialize(){
 		moodObject=new MoodAnalyser();
 	}
-	
-	@Test
-	public void moodTest() {
-		assertEquals("Happy Mood",moodObject.analyzeMood("I am in Happy Mood"));
-		assertEquals("Sad Mood",moodObject.analyzeMood("I am in Sad Mood"));
-	}	
+		
+	@Test 
+	public void givenMood_WhenSad_ReturnSad() {
+		assertEquals("SAD",moodObject.analyzeMood("I am in Sad Mood"));
+	}
 }
