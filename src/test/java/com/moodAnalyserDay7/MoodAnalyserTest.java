@@ -12,23 +12,26 @@ private MoodAnalyser moodObject;
 	public void initialize(){
 		moodObject=new MoodAnalyser();
 	}
-	
-	
+		
 	@Test 
-	public void givenMood_WhenSad_ReturnSad() {
+	public void givenMood_WhenSad_ReturnSad() throws MoodAnalysisException {
 		moodObject=new MoodAnalyser("I am in Sad Mood");
 		assertEquals("SAD",moodObject.analyzeMood());
 	}
 	
 	@Test 
-	public void givenMood_WhenAny_ReturnHappy() {
+	public void givenMood_WhenAny_ReturnHappy() throws MoodAnalysisException {
 		moodObject=new MoodAnalyser("I am in Any Mood");
 		assertEquals("HAPPY",moodObject.analyzeMood());
 	}
 	
 	@Test
-	public void givenMood_WhenNull_ReturnHappy() {
-		moodObject=new MoodAnalyser();
-		assertEquals("HAPPY",moodObject.analyzeMood());
+	public void givenMood_WhenNull_InformUser() throws MoodAnalysisException {
+		try {
+			moodObject=new MoodAnalyser();
+			assertEquals("HAPPY",moodObject.analyzeMood());
+		} catch (MoodAnalysisException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
