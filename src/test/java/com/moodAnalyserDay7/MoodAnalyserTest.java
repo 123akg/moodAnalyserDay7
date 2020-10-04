@@ -25,4 +25,10 @@ private MoodAnalyser moodObject;
 		moodObject=new MoodAnalyser("I am in Any Mood");
 		assertEquals("HAPPY",moodObject.analyzeMood());
 	}
+	
+	@Test
+	public void givenMood_WhenNull_ReturnHappy() {
+		moodObject=new MoodAnalyser();
+		assertEquals("HAPPY",moodObject.analyzeMood());
+	}
 }
