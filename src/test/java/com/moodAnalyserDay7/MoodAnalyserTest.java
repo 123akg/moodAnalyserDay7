@@ -16,11 +16,13 @@ private MoodAnalyser moodObject;
 	
 	@Test 
 	public void givenMood_WhenSad_ReturnSad() {
-		assertEquals("SAD",moodObject.analyzeMood("I am in Sad Mood"));
+		moodObject=new MoodAnalyser("I am in Sad Mood");
+		assertEquals("SAD",moodObject.analyzeMood());
 	}
 	
 	@Test 
 	public void givenMood_WhenAny_ReturnHappy() {
-		assertEquals("HAPPY",moodObject.analyzeMood("I am in Any Mood"));
+		moodObject=new MoodAnalyser("I am in Any Mood");
+		assertEquals("HAPPY",moodObject.analyzeMood());
 	}
 }
