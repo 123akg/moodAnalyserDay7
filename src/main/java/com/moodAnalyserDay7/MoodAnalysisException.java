@@ -2,7 +2,13 @@ package com.moodAnalyserDay7;
 
 public class MoodAnalysisException extends Exception {
 
-	public MoodAnalysisException(String message) {
+	public enum ExceptionType{
+		NULL_MSG, EMPTY_MSG;
+	}
+	private ExceptionType type;
+	
+	public MoodAnalysisException(ExceptionType type, String message) {
 		super(message);
+		this.type=type;
 	}
 }
