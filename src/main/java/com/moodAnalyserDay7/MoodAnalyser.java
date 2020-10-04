@@ -11,7 +11,7 @@ private String message;
 		this.message = message;
 	}
 
-	public String analyzeMood() {
+	public String analyzeMood()throws MoodAnalysisException {
 		try {
 			if(message.toLowerCase().contains("sad"))
 				return "SAD";			
@@ -20,7 +20,7 @@ private String message;
 			else
 				return "HAPPY";
 		} catch (NullPointerException e) {
-			return "HAPPY";
+			throw new MoodAnalysisException("Message Null, Please Enter Proper Message");
 		}
 	}
 }
